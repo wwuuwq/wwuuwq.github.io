@@ -361,7 +361,6 @@
   <div class="nav-logo" id="nav-initials">YN<span>.</span></div>
   <ul class="nav-links">
     <li><a href="#skills">Stack</a></li>
-    <li><a href="#projects">Work</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -382,8 +381,8 @@
       Чиста архітектура, продумана UX, якісний код.
     </p>
     <div class="hero-btns">
-      <a href="#projects" class="btn-fill">Переглянути роботи ↓</a>
-      <a href="#" class="btn-outline" id="btn-tg">Написати в Telegram</a>
+      <a href="https://t.me/wwuuwq" class="btn-fill" target="_blank" rel="noopener">Написати в Telegram</a>
+      <a href="mailto:nazartab3@gmail.com" class="btn-outline">nazartab3@gmail.com</a>
     </div>
   </div>
 
@@ -403,16 +402,10 @@
   <div class="skills-grid reveal-stagger" id="skills-grid"></div>
 </section>
 
-<!-- ═══════════════════════════════ PROJECTS ══════════ -->
-<section id="projects">
-  <div class="sec-label">02 — Роботи</div>
-  <h2 class="sec-title reveal">Вибрані<br>Проєкти</h2>
-  <div class="projects-grid reveal-stagger" id="projects-grid"></div>
-</section>
 
 <!-- ═══════════════════════════════ CONTACT ═══════════ -->
 <section id="contact">
-  <div class="sec-label">03 — Зв'язок</div>
+  <div class="sec-label">02 — Зв'язок</div>
   <h2 class="sec-title reveal">Є ідея?<br>Будуємо.</h2>
   <p class="contact-sub">Опишіть задачу — розбираємо архітектуру та стартуємо без зайвих слів.</p>
   <div class="contact-links" id="contact-links"></div>
@@ -437,9 +430,9 @@ const ME = {
   desc:        "Будую кросплатформенні мобільні застосунки для Android та iOS. Чиста архітектура, продумана UX, якісний код.",
 
   // Контакти
-  telegram:  "https://t.me/yourusername",
-  email:     "you@email.com",
-  github:    "https://github.com/yourusername",
+  telegram:  "https://t.me/wwuuwq",
+  email:     "nazartab3@gmail.com",
+  github:    "https://github.com/wwuuwq",
 
   // Статистика у hero
   stats: [
@@ -491,35 +484,11 @@ const SKILLS = [
   },
 ];
 
-/* ────────────────────────────────────────────────────────
-   🗂️  ПРОЄКТИ — ДОДАВАЙ НОВІ СЮДИ ↓
+/* ════════════════════════════════════════════════════════
+   🗂️  ПРОЄКТИ — ДОДАВАЙ НОВІ СЮДИ КОЛИ БУДУТЬ ↓
    Кожен об'єкт: { title, year, desc, stack, link }
-   link: посилання на GitHub або Live demo
-   ──────────────────────────────────────────────────────── */
-const PROJECTS = [
-  {
-    title: "МаркетОПТ",
-    year:  "2024–2025",
-    desc:  "Мобільний застосунок лояльності для роздрібної мережі. Персональні акції, купони з QR-кодом, «Останній шанс», темна тема.",
-    stack: ["Flutter", "Supabase", "Riverpod", "go_router", "PostgreSQL"],
-    link:  "https://github.com/yourusername/marketopt",
-  },
-  {
-    title: "Назва проєкту 2",
-    year:  "2024",
-    desc:  "Короткий опис — яку задачу вирішує, що цікавого в реалізації, який результат.",
-    stack: ["Flutter", "Firebase", "BLoC"],
-    link:  "#",
-  },
-  {
-    title: "Назва проєкту 3",
-    year:  "2023",
-    desc:  "Короткий опис — яку задачу вирішує, що цікавого в реалізації, який результат.",
-    stack: ["Flutter", "REST API", "Dart"],
-    link:  "#",
-  },
-  // ← Додавай нові проєкти тут у тому ж форматі
-];
+   ════════════════════════════════════════════════════════ */
+// const PROJECTS = [ ... ];
 
 /* ════════════════════════════════════════════════════════
    🎨  РЕНДЕР — не чіпай нижче якщо не треба
@@ -531,7 +500,6 @@ document.getElementById("nav-initials").innerHTML = ME.initials + '<span>.</span
 // Hero patches
 document.getElementById("hero-status").textContent = ME.status;
 document.getElementById("hero-desc").textContent   = ME.desc;
-document.getElementById("btn-tg").href             = ME.telegram;
 document.getElementById("footer-copy").textContent = `© ${new Date().getFullYear()}`;
 document.getElementById("footer-stack").textContent = ME.footerStack;
 
@@ -574,19 +542,6 @@ document.getElementById("skills-grid").innerHTML = SKILLS.map(s => `
     <div class="skill-cat">${s.cat}</div>
     <div class="skill-tags">${s.items.map(i => `<span class="skill-tag">${i}</span>`).join("")}</div>
   </div>
-`).join("");
-
-// Projects grid
-document.getElementById("projects-grid").innerHTML = PROJECTS.map(p => `
-  <a href="${p.link}" class="project-card" target="_blank" rel="noopener">
-    <div class="proj-header">
-      <span class="proj-year">${p.year}</span>
-      <span class="proj-arrow">↗</span>
-    </div>
-    <div class="proj-title">${p.title}</div>
-    <div class="proj-desc">${p.desc}</div>
-    <div class="proj-tags">${p.stack.map(t => `<span class="proj-tag">${t}</span>`).join("")}</div>
-  </a>
 `).join("");
 
 /* ── Scroll reveal ─────────────────────────────────── */
