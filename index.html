@@ -306,6 +306,42 @@
       border-radius: 3px; font-size: 0.72rem; font-family: var(--mono);
     }
 
+    /* ── SERVICES CARDS ──────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .svc-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s var(--ease);
+    }
+    .svc-card:hover {
+      border-color: var(--border-2);
+      background: var(--bg-3);
+      transform: translateY(-3px);
+    }
+    .svc-icon {
+      font-size: 1.4rem; margin-bottom: 1rem; display: block;
+    }
+    .svc-title {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text); margin-bottom: 0.875rem;
+    }
+    .svc-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+    .svc-list li {
+      font-size: 0.85rem; color: var(--muted);
+      padding-left: 1rem; position: relative; line-height: 1.4;
+    }
+    .svc-list li::before {
+      content: '—'; position: absolute; left: 0;
+      color: var(--muted-2); font-size: 0.75rem;
+    }
+
     /* ── CONTACT ──────────────────────────────────── */
     #contact {
       text-align: center;
@@ -360,6 +396,7 @@
 <nav>
   <div class="nav-logo" id="nav-initials">YN<span>.</span></div>
   <ul class="nav-links">
+    <li><a href="#about">About</a></li>
     <li><a href="#skills">Stack</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -373,7 +410,7 @@
       <span id="hero-status">Доступний для проєктів</span>
     </div>
     <h1 class="hero-name" id="hero-name">
-      Flutter<br>
+      Full-Stack<br>
       <span class="line-accent" id="hero-role">Developer</span>
     </h1>
     <p class="hero-desc" id="hero-desc">
@@ -395,9 +432,84 @@
   <div class="ticker-track" id="ticker"></div>
 </div>
 
+<!-- ═══════════════════════════════ SERVICES ══════════ -->
+<section id="about">
+  <div class="sec-label">01 — Що роблю</div>
+  <h2 class="sec-title reveal">Чим можу<br>допомогти</h2>
+  <div class="services-grid reveal-stagger">
+
+    <div class="svc-card">
+      <span class="svc-icon">🤖</span>
+      <div class="svc-title">Telegram-боти</div>
+      <ul class="svc-list">
+        <li>Боти будь-якої складності на aiogram</li>
+        <li>Інтеграція платежів і підписок</li>
+        <li>CRM-інтеграції та сповіщення</li>
+        <li>Адмін-панелі та аналітика</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <span class="svc-icon">⚙️</span>
+      <div class="svc-title">Backend & API</div>
+      <ul class="svc-list">
+        <li>REST API на FastAPI / Django</li>
+        <li>Бази даних PostgreSQL, SQLite</li>
+        <li>Авторизація, безпека, оптимізація</li>
+        <li>Інтеграції зі сторонніми сервісами</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <span class="svc-icon">🌐</span>
+      <div class="svc-title">Веб-сайти</div>
+      <ul class="svc-list">
+        <li>Лендінги, корпоративні сайти</li>
+        <li>Адаптивний дизайн для всіх пристроїв</li>
+        <li>Оптимізація швидкості та продуктивності</li>
+        <li>Інтерактивні елементи й анімації</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <span class="svc-icon">🔍</span>
+      <div class="svc-title">Парсери & Автоматизація</div>
+      <ul class="svc-list">
+        <li>Парсери сайтів і збір даних</li>
+        <li>Моніторинг цін і сповіщення</li>
+        <li>Автоматизація рутинних процесів</li>
+        <li>Крипто-боти і торгові стратегії</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <span class="svc-icon">📱</span>
+      <div class="svc-title">Мобільні додатки</div>
+      <ul class="svc-list">
+        <li>Кросплатформенні додатки на Flutter</li>
+        <li>Android та iOS з одного коду</li>
+        <li>Інтеграція з бекендом і API</li>
+        <li>Чиста архітектура, Material 3</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <span class="svc-icon">📊</span>
+      <div class="svc-title">Аналітика & Дані</div>
+      <ul class="svc-list">
+        <li>Обробка і аналіз даних на Python</li>
+        <li>SQL-запити і оптимізація БД</li>
+        <li>Візуалізація і звіти</li>
+        <li>Скрипти автоматичної обробки</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 <!-- ═══════════════════════════════ SKILLS ════════════ -->
 <section id="skills">
-  <div class="sec-label">01 — Стек</div>
+  <div class="sec-label">02 — Стек</div>
   <h2 class="sec-title reveal">Hard Skills<br>& Технології</h2>
   <div class="skills-grid reveal-stagger" id="skills-grid"></div>
 </section>
@@ -405,7 +517,7 @@
 
 <!-- ═══════════════════════════════ CONTACT ═══════════ -->
 <section id="contact">
-  <div class="sec-label">02 — Зв'язок</div>
+  <div class="sec-label">03 — Зв'язок</div>
   <h2 class="sec-title reveal">Є ідея?<br>Будуємо.</h2>
   <p class="contact-sub">Опишіть задачу — розбираємо архітектуру та стартуємо без зайвих слів.</p>
   <div class="contact-links" id="contact-links"></div>
@@ -423,11 +535,11 @@
    ════════════════════════════════════════════════════════ */
 
 const ME = {
-  name:        "Ваше Ім'я",    // ← твоє ім'я
-  initials:    "ВІ",           // ← ініціали для логотипу
-  title:       "Flutter Developer",
+  name:        "Your Name",
+  initials:    "YN",
+  title:       "Full-Stack Developer",
   status:      "Доступний для проєктів",
-  desc:        "Будую кросплатформенні мобільні застосунки для Android та iOS. Чиста архітектура, продумана UX, якісний код.",
+  desc:        "Python у центрі всього — від Telegram-ботів і торгових алгоритмів до FastAPI бекенду, парсерів і мобільних додатків. Пишу чистий код, який працює.",
 
   // Контакти
   telegram:  "https://t.me/wwuuwq",
@@ -436,22 +548,22 @@ const ME = {
 
   // Статистика у hero
   stats: [
-    { value: "3+",   label: "Роки досвіду" },
-    { value: "10+",  label: "Проєктів" },
-    { value: "2",    label: "Платформи" },
+    { value: "2+",      label: "Роки досвіду" },
+    { value: "5",       label: "Проєктів" },
+    { value: "Python",  label: "У центрі всього" },
   ],
 
-  footerStack: "Flutter · Dart · Supabase",
+  footerStack: "Python · FastAPI · Flutter · SQL",
 };
 
 /* ────────────────────────────────────────────────────────
    🔧  СТЕК (рядок з технологіями)
    ──────────────────────────────────────────────────────── */
 const TECH_TICKER = [
-  "Flutter", "Dart", "Supabase", "Firebase", "go_router",
-  "flutter_riverpod", "PostgreSQL", "REST API", "RLS", "Getx",
-  "Git", "GitHub", "Android Studio", "VS Code", "Figma",
-  "Docker", "CI/CD", "Material 3", "BLoC", "Clean Architecture",
+  "Python", "FastAPI", "Django", "aiogram", "SQL", "PostgreSQL",
+  "Flutter", "Dart", "Playwright", "Scrapy", "REST API",
+  "Git", "GitHub", "Docker", "VS Code", "Figma",
+  "HTML/CSS", "JavaScript", "SQLite", "asyncio", "Supabase",
 ];
 
 /* ────────────────────────────────────────────────────────
@@ -459,28 +571,28 @@ const TECH_TICKER = [
    ──────────────────────────────────────────────────────── */
 const SKILLS = [
   {
-    cat: "Mobile",
-    items: ["Flutter", "Dart", "Android", "iOS", "Material 3", "Cupertino"],
+    cat: "Core",
+    items: ["Python", "SQL", "Git", "Linux / Bash"],
   },
   {
-    cat: "Backend & DB",
-    items: ["Supabase", "Firebase", "PostgreSQL", "REST API", "Auth / RLS"],
+    cat: "Backend",
+    items: ["FastAPI", "Django", "REST API", "PostgreSQL", "SQLite"],
   },
   {
-    cat: "State & Arch",
-    items: ["Riverpod", "BLoC", "Clean Architecture", "go_router", "MVVM"],
+    cat: "Automation",
+    items: ["aiogram", "Playwright", "Scrapy", "asyncio", "requests"],
+  },
+  {
+    cat: "Frontend & Mobile",
+    items: ["HTML/CSS", "JavaScript", "Flutter", "Dart", "Material 3"],
+  },
+  {
+    cat: "Data",
+    items: ["pandas", "SQL queries", "аналітика", "парсинг даних"],
   },
   {
     cat: "Tools",
-    items: ["Git", "GitHub", "Figma", "Android Studio", "VS Code"],
-  },
-  {
-    cat: "Practices",
-    items: ["CI/CD", "Code Review", "Unit Testing", "Agile / Scrum"],
-  },
-  {
-    cat: "Languages",
-    items: ["Dart", "SQL", "Bash", "Українська 🇺🇦", "English"],
+    items: ["Docker", "GitHub", "VS Code", "Figma", "Supabase"],
   },
 ];
 
